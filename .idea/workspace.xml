@@ -5,27 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4b4729a-f063-474a-9231-4a77b52a3639" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/dto/CurrencyConversionResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/dexwin/currencyconverter/dto/CurrencyConversionResponseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/dexwin/currencyconverter/dto/ExchangeRateResponseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/dexwin/currencyconverter/service/CurrencyExchangeRateServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/controller/CurrencyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/controller/CurrencyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/service/CurrencyExchangeRateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/service/CurrencyExchangeRateService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/service/CurrencyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/service/CurrencyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/dexwin/currencyconverter/controller/CurrencyControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/dexwin/currencyconverter/controller/CurrencyControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dexwin/currencyconverter/controller/CurrencyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dexwin/currencyconverter/controller/CurrencyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dexwin/currencyconverter/service/CurrencyExchangeRateService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dexwin/currencyconverter/service/CurrencyExchangeRateService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dexwin/currencyconverter/service/CurrencyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dexwin/currencyconverter/service/CurrencyService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2025-02-28T19-20-16_107-jvmRun1.dump" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.dexwin.currencyconverter.controller.CurrencyControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.dexwin.currencyconverter.controller.CurrencyControllerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.dexwin.currencyconverter.controller.CurrencyControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.dexwin.currencyconverter.controller.CurrencyControllerTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/dexwin/currencyconverter/controller/CurrencyControllerTest$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/dexwin/currencyconverter/controller/CurrencyControllerTest$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/dexwin/currencyconverter/controller/CurrencyControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/dexwin/currencyconverter/controller/CurrencyControllerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +19,7 @@
       <list>
         <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -200,7 +183,7 @@
       <workItem from="1740731766708" duration="3581000" />
       <workItem from="1740735952900" duration="2658000" />
       <workItem from="1740770125677" duration="15002000" />
-      <workItem from="1740850514074" duration="9299000" />
+      <workItem from="1740850514074" duration="11668000" />
     </task>
     <servers />
   </component>
