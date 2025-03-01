@@ -1,5 +1,8 @@
-com\dexwin\currencyconverter\controller\CurrencyController.class
-com\dexwin\currencyconverter\service\CurrencyService.class
+com\dexwin\currencyconverter\util\CurrencySymbolUtil.class
 com\dexwin\currencyconverter\Application.class
 com\dexwin\currencyconverter\service\CurrencyExchangeRateService.class
-com\dexwin\currencyconverter\dto\CurrencyExchangeDTO.class
+com\dexwin\currencyconverter\controller\CurrencyController.class
+com\dexwin\currencyconverter\service\CurrencyService.class
+com\dexwin\currencyconverter\dto\CurrencyConversionResponse.class
+com\dexwin\currencyconverter\config\RestClientConfig.class
+com\dexwin\currencyconverter\dto\ExchangeRateResponse.class
