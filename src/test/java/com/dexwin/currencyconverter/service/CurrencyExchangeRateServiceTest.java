@@ -47,7 +47,7 @@ public class CurrencyExchangeRateServiceTest {
 
     @Test
     void convert_SuccessfulConversion_ReturnsCorrectFormattedResponse() {
-        // Arrange
+
         String source = "USD";
         String target = "EUR";
         double amount = 100.0;
@@ -62,13 +62,13 @@ public class CurrencyExchangeRateServiceTest {
         when(requestHeadersUriSpec.retrieve()).thenReturn(responseSpec);
         when(responseSpec.body(ExchangeRateResponse.class)).thenReturn(mockResponse);
 
-        // Act
+
         ResponseEntity<CurrencyConversionResponse> response = currencyService.convert(source, target, amount);
 
-        // Assert
-        assertTrue(response.getBody().isSuccess());
-        assertEquals("Conversion successful", response.getBody().getMessage());
-        assertEquals("€85.23", response.getBody().getResult());
+
+        assertTrue(response.getBody().success());
+        assertEquals("Conversion successful", response.getBody().message());
+        assertEquals("€85.23", response.getBody().result());
 
         verify(requestHeadersUriSpec).uri(expectedUrl);
         verify(responseSpec).body(ExchangeRateResponse.class);
@@ -76,7 +76,7 @@ public class CurrencyExchangeRateServiceTest {
 
     @Test
     void convert_WithZeroAmount_ReturnsZeroFormattedResponse() {
-        // Arrange
+
         String source = "USD";
         String target = "EUR";
         double amount = 0.0;
@@ -90,17 +90,17 @@ public class CurrencyExchangeRateServiceTest {
         when(requestHeadersUriSpec.retrieve()).thenReturn(responseSpec);
         when(responseSpec.body(ExchangeRateResponse.class)).thenReturn(mockResponse);
 
-        // Act
+
         ResponseEntity<CurrencyConversionResponse> response = currencyService.convert(source, target, amount);
 
-        // Assert
-        assertTrue(response.getBody().isSuccess());
-        assertEquals("€0.00", response.getBody().getResult());
+
+        assertTrue(response.getBody().success());
+        assertEquals("€0.00", response.getBody().result());
     }
 
     @Test
     void convert_WithLargeAmount_HandlesFormattingCorrectly() {
-        // Arrange
+
         String source = "JPY";
         String target = "USD";
         double amount = 1000000.0;
@@ -114,17 +114,17 @@ public class CurrencyExchangeRateServiceTest {
         when(requestHeadersUriSpec.retrieve()).thenReturn(responseSpec);
         when(responseSpec.body(ExchangeRateResponse.class)).thenReturn(mockResponse);
 
-        // Act
+
         ResponseEntity<CurrencyConversionResponse> response = currencyService.convert(source, target, amount);
 
-        // Assert
-        assertTrue(response.getBody().isSuccess());
-        assertEquals("$9,152.76", response.getBody().getResult());
+
+        assertTrue(response.getBody().success());
+        assertEquals("$9,152.76", response.getBody().result());
     }
 
     @Test
     void convert_WithNegativeAmount_HandlesFormattingCorrectly() {
-        // Arrange
+
         String source = "USD";
         String target = "GBP";
         double amount = -100.0;
@@ -138,17 +138,15 @@ public class CurrencyExchangeRateServiceTest {
         when(requestHeadersUriSpec.retrieve()).thenReturn(responseSpec);
         when(responseSpec.body(ExchangeRateResponse.class)).thenReturn(mockResponse);
 
-        // Act
         ResponseEntity<CurrencyConversionResponse> response = currencyService.convert(source, target, amount);
 
-        // Assert
-        assertTrue(response.getBody().isSuccess());
-        assertEquals("£-77.35", response.getBody().getResult());
+        assertTrue(response.getBody().success());
+        assertEquals("£-77.35", response.getBody().result());
     }
 
     @Test
     void convert_ApiReturnsFalseSuccess_ReturnsBadRequest() {
-        // Arrange
+
         String source = "USD";
         String target = "EUR";
         double amount = 100.0;
@@ -160,18 +158,18 @@ public class CurrencyExchangeRateServiceTest {
         when(requestHeadersUriSpec.retrieve()).thenReturn(responseSpec);
         when(responseSpec.body(ExchangeRateResponse.class)).thenReturn(mockResponse);
 
-        // Act
+
         ResponseEntity<CurrencyConversionResponse> response = currencyService.convert(source, target, amount);
 
-        // Assert
-        assertFalse(response.getBody().isSuccess());
-        assertEquals("Conversion failed", response.getBody().getMessage());
-        assertEquals("0.00", response.getBody().getResult());
+
+        assertFalse(response.getBody().success());
+        assertEquals("Conversion failed", response.getBody().message());
+        assertEquals("0.00", response.getBody().result());
     }
 
     @Test
     void convert_ApiReturnsNull_ReturnsBadRequest() {
-        // Arrange
+
         String source = "USD";
         String target = "EUR";
         double amount = 100.0;
@@ -180,18 +178,18 @@ public class CurrencyExchangeRateServiceTest {
         when(requestHeadersUriSpec.retrieve()).thenReturn(responseSpec);
         when(responseSpec.body(ExchangeRateResponse.class)).thenReturn(null);
 
-        // Act
+
         ResponseEntity<CurrencyConversionResponse> response = currencyService.convert(source, target, amount);
 
-        // Assert
-        assertFalse(response.getBody().isSuccess());
-        assertEquals("Conversion failed", response.getBody().getMessage());
-        assertEquals("0.00", response.getBody().getResult());
+
+        assertFalse(response.getBody().success());
+        assertEquals("Conversion failed", response.getBody().message());
+        assertEquals("0.00", response.getBody().result());
     }
 
     @Test
     void convert_ApiThrowsRestClientException_ReturnsInternalServerError() {
-        // Arrange
+
         String source = "USD";
         String target = "EUR";
         double amount = 100.0;
@@ -200,18 +198,17 @@ public class CurrencyExchangeRateServiceTest {
         when(requestHeadersUriSpec.uri(anyString())).thenReturn(requestHeadersUriSpec);
         when(requestHeadersUriSpec.retrieve()).thenThrow(new RestClientException(errorMessage));
 
-        // Act
         ResponseEntity<CurrencyConversionResponse> response = currencyService.convert(source, target, amount);
 
-        // Assert
-        assertFalse(response.getBody().isSuccess());
-        assertEquals("Error fetching exchange rate: " + errorMessage, response.getBody().getMessage());
-        assertEquals("0.00", response.getBody().getResult());
+
+        assertFalse(response.getBody().success());
+        assertEquals("Error fetching exchange rate: " + errorMessage, response.getBody().message());
+        assertEquals("0.00", response.getBody().result());
     }
 
     @Test
     void convert_WithInvalidCurrencyCodes_HandlesApiErrorsCorrectly() {
-        // Arrange
+
         String source = "INVALID";
         String target = "EUR";
         double amount = 100.0;
@@ -220,22 +217,22 @@ public class CurrencyExchangeRateServiceTest {
         when(requestHeadersUriSpec.uri(anyString())).thenReturn(requestHeadersUriSpec);
         when(requestHeadersUriSpec.retrieve()).thenThrow(new RestClientResponseException(errorMessage, 400, "Bad Request", null, null, null));
 
-        // Act
+
         ResponseEntity<CurrencyConversionResponse> response = currencyService.convert(source, target, amount);
 
-        // Assert
-        assertFalse(response.getBody().isSuccess());
-        assertTrue(response.getBody().getMessage().contains(errorMessage));
-        assertEquals("0.00", response.getBody().getResult());
+
+        assertFalse(response.getBody().success());
+        assertTrue(response.getBody().message().contains(errorMessage));
+        assertEquals("0.00", response.getBody().result());
     }
 
     @Test
     void convert_SameCurrencySourceAndTarget_FormatsCorrectly() {
-        // Arrange
+
         String source = "USD";
         String target = "USD";
         double amount = 100.0;
-        double result = 100.0; // Same amount for same currency
+        double result = 100.0;
 
         ExchangeRateResponse mockResponse = new ExchangeRateResponse();
         mockResponse.setSuccess(true);
@@ -245,17 +242,17 @@ public class CurrencyExchangeRateServiceTest {
         when(requestHeadersUriSpec.retrieve()).thenReturn(responseSpec);
         when(responseSpec.body(ExchangeRateResponse.class)).thenReturn(mockResponse);
 
-        // Act
+
         ResponseEntity<CurrencyConversionResponse> response = currencyService.convert(source, target, amount);
 
-        // Assert
-        assertTrue(response.getBody().isSuccess());
-        assertEquals("$100.00", response.getBody().getResult());
+
+        assertTrue(response.getBody().success());
+        assertEquals("$100.00", response.getBody().result());
     }
 
     @Test
     void convert_VerifiesCorrectUrlConstruction() {
-        // Arrange
+
         String source = "GBP";
         String target = "CAD";
         double amount = 50.5;
@@ -266,10 +263,10 @@ public class CurrencyExchangeRateServiceTest {
         when(requestHeadersUriSpec.retrieve()).thenReturn(responseSpec);
         when(responseSpec.body(ExchangeRateResponse.class)).thenReturn(new ExchangeRateResponse());
 
-        // Act
+
         currencyService.convert(source, target, amount);
 
-        // Assert
+
         String capturedUrl = urlCaptor.getValue();
         assertEquals("/convert?from=GBP&to=CAD&amount=50.5&access_key=test-api-key", capturedUrl);
     }
