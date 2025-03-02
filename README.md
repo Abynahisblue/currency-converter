@@ -21,68 +21,164 @@ Tasks:
  * Write at least on test case (or as many as you think necessary)
  * Please introduce any change to any existing class if you think it improves the solution
 
-
 Good luck!
 
-Currency Conversion Application - Documentation
-1. Introduction
-The Currency Conversion Application is a RESTful API built using Spring Boot 3.2. It allows users to convert currency values using real-time exchange rates. The application integrates with an external exchange rate provider and follows best practices in REST API design, dependency injection, error handling, and unit testing.
+<h3>Currency Conversion Application</h3>
 
-2. Project Architecture
-The application follows a layered architecture:
-Controller Layer (CurrencyController) – Handles HTTP requests and responses.
-Service Layer (CurrencyExchangeRateService) – Implements business logic and fetches exchange rates using RestClient.
-Utility Classes (CurrencySymbolUtil) – Provides helper functions, such as currency symbol mapping.
-Configuration (application.properties) – Manages external API settings.
+A RESTful API for real-time currency conversion using Spring Boot 3.2.
 
-3. Implementation Details 
-3.1 Dependencies
-The project is built with Maven and includes the following dependencies:
-spring-boot-starter-web – Provides support for RESTful APIs.
-spring-boot-starter-webflux – Enables RestClient for making API calls.
-spring-boot-starter-test – Provides JUnit and Mockito for testing.
-3.2 Controller - CurrencyController
-The controller exposes an endpoint for currency conversion:
-Receives request parameters (source, target, amount).
-Calls the service layer to fetch exchange rates.
-Returns a JSON response with the converted amount or an error message.
-3.3 Service - CurrencyExchangeRateService
-The service class is responsible for:
-Building API requests dynamically based on user input.
-Using RestClient (from spring-boot-starter-webflux) to fetch exchange rates.
-Processing API responses and extracting the conversion result.
-Handling exceptions gracefully to ensure system reliability.
-3.4 Utility Class - CurrencySymbolUtil
-A utility class maps currency codes (e.g., USD, EUR) to their respective symbols ($, €). This ensures that the converted amount is displayed in a user-friendly format.
+Table of Contents
 
-4. Configuration
-The application properties file (application.properties) stores:
-Base URL for the exchange rate API.
-API key for authentication.
-Using externalized configuration makes it easy to change API settings without modifying the code.
+Project Setup
 
-5. Error Handling
-The application handles errors effectively:
-Invalid Currency Codes – Returns an error if the user enters an unsupported currency.
-API Failures – Provides a fallback response if the exchange rate provider is down.
-Validation Checks – Ensures valid numerical input for the amount.
-Exception Logging – Captures errors for debugging.
+Usage
 
-6. Unit Testing
+Error Handling
+
+Unit Testing
+
+Deployment
+
+Project Documentation
+
+Project Setup
+
+To get a local copy up and running, follow these steps.
+
+Prerequisites
+
+To install and run the application, ensure you have the following:
+
+Java 17 or later
+
+Maven
+
+Docker (optional for containerized deployment)
+
+Local Setup
+
+Clone the repository:
+
+git clone https://github.com/your-repo/currency-conversion.git
+
+Navigate to the project directory:
+
+cd currency-conversion
+
+Build the application:
+
+mvn clean install
+
+Run the application:
+
+mvn spring-boot:run
+
+The logs indicate the application is running:
+
+INFO 12345 --- [main] com.example.CurrencyApplication : Started CurrencyApplication in 5.123 seconds
+
+Usage
+
+The application provides a REST API for currency conversion.
+
+API Endpoints
+
+Endpoint
+
+Method
+
+Description
+
+/convert
+
+GET
+
+Converts an amount from one currency to another
+
+Example Request
+
+curl -X GET "http://localhost:8080/convert?source=USD&target=EUR&amount=100"
+
+Example Response
+
+{
+    "success": true,
+    "message": "Conversion successful",
+    "result": "¥105,437.53"
+}
+
+Error Handling
+
+The application provides detailed error responses for various cases:
+
+Invalid Currency Code: Returns an error if an unsupported currency is used.
+
+API Failures: Handles failures from the external exchange rate provider.
+
+Validation Errors: Ensures numerical values for the amount.
+
+Exception Logging: Captures unexpected errors for debugging.
+
+Unit Testing
+
 The application is tested using JUnit 5 and Mockito:
-Mocking RestClient Calls – The exchange rate API is simulated in tests.
-Validation of Conversion Logic – Ensures calculations and formatting are correct.
-Edge Case Testing – Covers scenarios like zero amounts and API failures.
 
-7. Deployment
-7.1 Running Locally
-Clone the repository.
-Navigate to the project folder.
-Run mvn spring-boot:run.
-Access the API via Postman or a web browser.
-7.2 Docker Deployment
-A Dockerfile can be created to containerize the application.
-The container can be deployed to cloud services.
+Mocking API Calls: Simulates responses from the exchange rate provider.
 
-8. Conclusion
-This documentation outlines the Currency Conversion App, covering architecture, API integration, error handling, and testing. It leverages Spring Boot 3.2, RestClient, and best coding practices for a scalable and maintainable system.
+Validation Testing: Ensures conversion calculations are correct.
+
+Edge Case Testing: Covers scenarios like zero values and incorrect inputs.
+
+To run tests:
+
+mvn test
+
+Deployment
+
+Running with Docker
+
+To run the application using Docker:
+
+Build the Docker image:
+
+docker build -t currency-conversion-app .
+
+Run the container:
+
+docker run -p 8080:8080 currency-conversion-app
+
+Project Documentation
+
+Design and Architectural Decisions
+
+The system follows a layered architecture:
+
+Controller Layer: Handles HTTP requests (CurrencyController).
+
+Service Layer: Implements business logic (CurrencyExchangeRateService).
+
+Utility Classes: Provides helper functions (CurrencySymbolUtil).
+
+Configuration: Manages external API settings via application.properties.
+
+Tools Used
+
+Spring Boot: Provides a robust backend framework.
+
+RestClient: Fetches exchange rates from an external API.
+
+JUnit & Mockito: Used for unit testing.
+
+Docker: Supports containerized deployment.
+
+Future Improvements
+
+Caching: Implementing Redis to reduce API calls.
+
+Authentication: Adding security for API access.
+
+GraphQL Support: Allowing flexible queries for currency conversion.
+
+Conclusion
+
+This application provides an efficient and scalable solution for currency conversion using Spring Boot, external APIs, and best practices in REST API design, error handling, and testing.
