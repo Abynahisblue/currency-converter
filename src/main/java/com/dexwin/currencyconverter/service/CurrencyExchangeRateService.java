@@ -4,7 +4,6 @@ import com.dexwin.currencyconverter.dto.CurrencyConversionResponse;
 import com.dexwin.currencyconverter.dto.ExchangeRateResponse;
 import com.dexwin.currencyconverter.util.CurrencySymbolUtil;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestClientException;
@@ -12,9 +11,9 @@ import org.springframework.web.client.RestClientException;
 import java.text.DecimalFormat;
 
 /**
- * TODO: Implementation of this class has to be backed by https://api.exchangerate.host/latest?base=EUR&symbols=AUD,CAD,CHF,CNY,GBP,JPY,USD
+ * Service implementation for currency conversion using exchangerate.host API.
+ * API endpoint: https://api.exchangerate.host/latest?base=EUR&symbols=AUD,CAD,CHF,CNY,GBP,JPY,USD
  */
-
 @Service
 public class CurrencyExchangeRateService implements CurrencyService {
 
@@ -30,7 +29,7 @@ public class CurrencyExchangeRateService implements CurrencyService {
     }
 
     @Override
-    public ResponseEntity<CurrencyConversionResponse> convert(String source, String target, double amount) {
+    public CurrencyConversionResponse convert(String source, String target, double amount) {
         String url = "/convert?from=" + source + "&to=" + target + "&amount=" + amount + "&access_key=" + apiKey;
 
         try {
@@ -41,22 +40,26 @@ public class CurrencyExchangeRateService implements CurrencyService {
 
             if (response != null && response.isSuccess()) {
                 String targetSymbol = CurrencySymbolUtil.getSymbol(target);
-
-                // Append the target symbol directly to the result
-                // String formattedResult = decimalFormat.format(response.getResult()) + " " + targetSymbol;
                 String formattedResult = targetSymbol + decimalFormat.format(response.getResult());
 
-                return ResponseEntity.ok(new CurrencyConversionResponse(
+                return new CurrencyConversionResponse(
                         true,
                         "Conversion successful",
                         formattedResult
-                ));
+                );
             } else {
-                return ResponseEntity.badRequest().body(new CurrencyConversionResponse(false, "Conversion failed", "0.00"));
+                return new CurrencyConversionResponse(
+                        false,
+                        "Conversion failed",
+                        "0.00"
+                );
             }
-
         } catch (RestClientException e) {
-            return ResponseEntity.internalServerError().body(new CurrencyConversionResponse(false, "Error fetching exchange rate: " + e.getMessage(), "0.00"));
+            return new CurrencyConversionResponse(
+                    false,
+                    "Error fetching exchange rate: " + e.getMessage(),
+                    "0.00"
+            );
         }
     }
 }

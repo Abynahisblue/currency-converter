@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a4b4729a-f063-474a-9231-4a77b52a3639" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/dto/CurrencyConversionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/dto/CurrencyConversionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/controller/CurrencyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/controller/CurrencyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/service/CurrencyExchangeRateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/service/CurrencyExchangeRateService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/util/CurrencySymbolUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/util/CurrencySymbolUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/dexwin/currencyconverter/dto/CurrencyConversionResponseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/dexwin/currencyconverter/dto/CurrencyConversionResponseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/service/CurrencyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/service/CurrencyService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/dexwin/currencyconverter/service/CurrencyExchangeRateServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/dexwin/currencyconverter/service/CurrencyExchangeRateServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,38 +39,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.CurrencyControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CurrencyConversionResponseTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CurrencyExchangeRateServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ExchangeRateResponseTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.currency-converter [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.currency-converter [install].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feat/currency-conversion&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.CurrencyControllerTest.executor": "Run",
+    "JUnit.CurrencyConversionResponseTest.executor": "Run",
+    "JUnit.CurrencyExchangeRateServiceTest.convert_SuccessfulConversion_ReturnsCorrectFormattedResponse.executor": "Run",
+    "JUnit.CurrencyExchangeRateServiceTest.convert_VerifiesCorrectUrlConstruction.executor": "Run",
+    "JUnit.CurrencyExchangeRateServiceTest.executor": "Run",
+    "JUnit.ExchangeRateResponseTest.executor": "Run",
+    "Maven.currency-converter [clean].executor": "Run",
+    "Maven.currency-converter [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.Application.executor": "Run",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
+    "git-widget-placeholder": "feat/currency-conversion",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -84,7 +85,7 @@
       <recent name="com.dexwin.currencyconverter.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CurrencyConversionResponseTest">
+  <component name="RunManager">
     <configuration name="CurrencyControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="currency-converter" />
       <extension name="coverage">
@@ -130,17 +131,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExchangeRateResponseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CurrencyExchangeRateServiceTest.convert_SuccessfulConversion_ReturnsCorrectFormattedResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="currency-converter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dexwin.currencyconverter.dto.*" />
+          <option name="PATTERN" value="com.dexwin.currencyconverter.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.dexwin.currencyconverter.dto" />
-      <option name="MAIN_CLASS_NAME" value="com.dexwin.currencyconverter.dto.ExchangeRateResponseTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.dexwin.currencyconverter.service" />
+      <option name="MAIN_CLASS_NAME" value="com.dexwin.currencyconverter.service.CurrencyExchangeRateServiceTest" />
+      <option name="METHOD_NAME" value="convert_SuccessfulConversion_ReturnsCorrectFormattedResponse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CurrencyExchangeRateServiceTest.convert_VerifiesCorrectUrlConstruction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="currency-converter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dexwin.currencyconverter.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dexwin.currencyconverter.service" />
+      <option name="MAIN_CLASS_NAME" value="com.dexwin.currencyconverter.service.CurrencyExchangeRateServiceTest" />
+      <option name="METHOD_NAME" value="convert_VerifiesCorrectUrlConstruction" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -167,10 +185,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CurrencyConversionResponseTest" />
-        <item itemvalue="JUnit.ExchangeRateResponseTest" />
-        <item itemvalue="JUnit.CurrencyExchangeRateServiceTest" />
         <item itemvalue="JUnit.CurrencyControllerTest" />
+        <item itemvalue="JUnit.CurrencyExchangeRateServiceTest" />
+        <item itemvalue="JUnit.CurrencyExchangeRateServiceTest.convert_VerifiesCorrectUrlConstruction" />
+        <item itemvalue="JUnit.CurrencyExchangeRateServiceTest.convert_SuccessfulConversion_ReturnsCorrectFormattedResponse" />
+        <item itemvalue="JUnit.CurrencyConversionResponseTest" />
       </list>
     </recent_temporary>
   </component>
@@ -187,7 +206,8 @@
       <workItem from="1740735952900" duration="2658000" />
       <workItem from="1740770125677" duration="15002000" />
       <workItem from="1740850514074" duration="12517000" />
-      <workItem from="1740877397713" duration="688000" />
+      <workItem from="1740877397713" duration="1040000" />
+      <workItem from="1740928606034" duration="3746000" />
     </task>
     <servers />
   </component>
