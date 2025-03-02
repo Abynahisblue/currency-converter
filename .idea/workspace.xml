@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4b4729a-f063-474a-9231-4a77b52a3639" name="Changes" comment="" />
+    <list default="true" id="a4b4729a-f063-474a-9231-4a77b52a3639" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -33,6 +39,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.CurrencyControllerTest.executor": "Run",
+    "JUnit.CurrencyConversionResponseTest.executor": "Run",
+    "JUnit.CurrencyExchangeRateServiceTest.executor": "Run",
+    "JUnit.ExchangeRateResponseTest.executor": "Run",
     "Maven.currency-converter [clean].executor": "Run",
     "Maven.currency-converter [install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
@@ -42,7 +52,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.Application.executor": "Run",
-    "git-widget-placeholder": "main",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
+    "git-widget-placeholder": "feat/currency-conversion",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -59,7 +72,76 @@
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.dexwin.currencyconverter.dto" />
+      <recent name="com.dexwin.currencyconverter.service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.CurrencyConversionResponseTest">
+    <configuration name="CurrencyControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="currency-converter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dexwin.currencyconverter.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dexwin.currencyconverter.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.dexwin.currencyconverter.controller.CurrencyControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CurrencyConversionResponseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="currency-converter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dexwin.currencyconverter.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dexwin.currencyconverter.dto" />
+      <option name="MAIN_CLASS_NAME" value="com.dexwin.currencyconverter.dto.CurrencyConversionResponseTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CurrencyExchangeRateServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="currency-converter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dexwin.currencyconverter.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dexwin.currencyconverter.service" />
+      <option name="MAIN_CLASS_NAME" value="com.dexwin.currencyconverter.service.CurrencyExchangeRateServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExchangeRateResponseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="currency-converter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dexwin.currencyconverter.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dexwin.currencyconverter.dto" />
+      <option name="MAIN_CLASS_NAME" value="com.dexwin.currencyconverter.dto.ExchangeRateResponseTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Dexwin coding assessment" />
       <method v="2">
@@ -80,6 +162,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CurrencyConversionResponseTest" />
+        <item itemvalue="JUnit.ExchangeRateResponseTest" />
+        <item itemvalue="JUnit.CurrencyExchangeRateServiceTest" />
+        <item itemvalue="JUnit.CurrencyControllerTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -93,6 +183,7 @@
       <workItem from="1740731766708" duration="3581000" />
       <workItem from="1740735952900" duration="2658000" />
       <workItem from="1740770125677" duration="15002000" />
+      <workItem from="1740850514074" duration="11668000" />
     </task>
     <servers />
   </component>
