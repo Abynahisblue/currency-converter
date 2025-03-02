@@ -12,7 +12,7 @@ import java.text.DecimalFormat;
 
 /**
  * Service implementation for currency conversion using exchangerate.host API.
- * API endpoint: https://api.exchangerate.host/latest?base=EUR&symbols=AUD,CAD,CHF,CNY,GBP,JPY,USD
+ * API endpoint: https://api.exchangerate.host/convert?from=USD&to=EUR&amount=100
  */
 @Service
 public class CurrencyExchangeRateService implements CurrencyService {
@@ -44,20 +44,20 @@ public class CurrencyExchangeRateService implements CurrencyService {
 
                 return new CurrencyConversionResponse(
                         true,
-                        "Conversion successful",
-                        formattedResult
+                        new CurrencyConversionResponse.Query(source, target, amount),
+                        formattedResult // Return formatted result instead of raw number
                 );
             } else {
                 return new CurrencyConversionResponse(
                         false,
-                        "Conversion failed",
-                        "0.00"
+                        new CurrencyConversionResponse.Query(source, target, amount),
+                        "0.00" // Return formatted default value
                 );
             }
         } catch (RestClientException e) {
             return new CurrencyConversionResponse(
                     false,
-                    "Error fetching exchange rate: " + e.getMessage(),
+                    new CurrencyConversionResponse.Query(source, target, amount),
                     "0.00"
             );
         }

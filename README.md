@@ -152,3 +152,4 @@ The system follows a layered architecture:
 
 This application provides an efficient and scalable solution for currency conversion using Spring Boot, external APIs, and best practices in REST API design, error handling, and testing.
 
+
