@@ -15,83 +15,82 @@ public class CurrencyConversionResponseTest {
 
     @Test
     void testConstructor_SuccessfulConversion() {
-        // Arrange
+
         boolean success = true;
         String message = "Conversion successful";
         String result = "$123.45";
 
-        // Act
+
         CurrencyConversionResponse response = new CurrencyConversionResponse(success, message, result);
 
-        // Assert
-        assertTrue(response.isSuccess(), "Success flag should be true");
-        assertEquals(message, response.getMessage(), "Message should match the input");
-        assertEquals(result, response.getResult(), "Result should match the input");
+
+        assertTrue(response.success(), "Success flag should be true");
+        assertEquals(message, response.message(), "Message should match the input");
+        assertEquals(result, response.result(), "Result should match the input");
     }
 
     @Test
     void testConstructor_FailedConversion() {
-        // Arrange
+
         boolean success = false;
         String message = "Conversion failed";
         String result = "0.00";
 
-        // Act
+
         CurrencyConversionResponse response = new CurrencyConversionResponse(success, message, result);
 
-        // Assert
-        assertFalse(response.isSuccess(), "Success flag should be false");
-        assertEquals(message, response.getMessage(), "Message should match the input");
-        assertEquals(result, response.getResult(), "Result should match the input");
+
+        assertFalse(response.success(), "Success flag should be false");
+        assertEquals(message, response.message(), "Message should match the input");
+        assertEquals(result, response.result(), "Result should match the input");
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"$123.45", "€100.00", "£75.50", "¥10,000.00", "₹9,999.99", "0.00", "-$50.25"})
     void testConstructor_VariousFormattedResults(String formattedResult) {
-        // Arrange
+
         boolean success = true;
         String message = "Conversion successful";
 
-        // Act
+
         CurrencyConversionResponse response = new CurrencyConversionResponse(success, message, formattedResult);
 
-        // Assert
-        assertEquals(formattedResult, response.getResult(), "Result should handle various currency formats");
+
+        assertEquals(formattedResult, response.result(), "Result should handle various currency formats");
     }
 
     @ParameterizedTest
     @NullAndEmptySource
     @ValueSource(strings = {" ", "   "})
     void testConstructor_EmptyOrNullMessage(String message) {
-        // Arrange
+
         boolean success = true;
         String result = "$123.45";
 
-        // Act
+
         CurrencyConversionResponse response = new CurrencyConversionResponse(success, message, result);
 
-        // Assert
-        assertEquals(message, response.getMessage(), "Message should handle null or empty values");
+
+        assertEquals(message, response.message(), "Message should handle null or empty values");
     }
 
     @ParameterizedTest
     @NullAndEmptySource
     @ValueSource(strings = {" ", "   "})
     void testConstructor_EmptyOrNullResult(String result) {
-        // Arrange
+
         boolean success = true;
         String message = "Conversion successful";
 
-        // Act
+
         CurrencyConversionResponse response = new CurrencyConversionResponse(success, message, result);
 
-        // Assert
-        assertEquals(result, response.getResult(), "Result should handle null or empty values");
+        assertEquals(result, response.result(), "Result should handle null or empty values");
     }
 
     @Test
     void testConstructor_VeryLongMessage() {
-        // Arrange
+
         boolean success = true;
         // Create a message with more than 1000 characters
         StringBuilder messageBuilder = new StringBuilder();
@@ -101,16 +100,16 @@ public class CurrencyConversionResponseTest {
         String longMessage = messageBuilder.toString();
         String result = "$123.45";
 
-        // Act
+
         CurrencyConversionResponse response = new CurrencyConversionResponse(success, longMessage, result);
 
-        // Assert
-        assertEquals(longMessage, response.getMessage(), "Message should handle very long strings");
+
+        assertEquals(longMessage, response.message(), "Message should handle very long strings");
     }
 
     @Test
     void testConstructor_VeryLongResult() {
-        // Arrange
+
         boolean success = true;
         String message = "Conversion successful";
         // Create a result with more than 100 characters (unlikely in practice but testing the boundary)
@@ -121,74 +120,72 @@ public class CurrencyConversionResponseTest {
         resultBuilder.append("999.99");
         String longResult = resultBuilder.toString();
 
-        // Act
+
         CurrencyConversionResponse response = new CurrencyConversionResponse(success, message, longResult);
 
-        // Assert
-        assertEquals(longResult, response.getResult(), "Result should handle very long strings");
+        assertEquals(longResult, response.result(), "Result should handle very long strings");
     }
 
     @Test
     void testGetters_ImmutabilityCheck() {
-        // Arrange
+
         boolean success = true;
         String message = "Conversion successful";
         String result = "$123.45";
 
-        // Act
+
         CurrencyConversionResponse response = new CurrencyConversionResponse(success, message, result);
 
         // Assert - Since fields are final, this is mostly a conceptual test
         // to verify that repeated calls to getters return the same values
-        assertEquals(success, response.isSuccess(), "First call to isSuccess()");
-        assertEquals(message, response.getMessage(), "First call to getMessage()");
-        assertEquals(result, response.getResult(), "First call to getResult()");
+        assertEquals(success, response.success(), "First call to isSuccess()");
+        assertEquals(message, response.message(), "First call to getMessage()");
+        assertEquals(result, response.result(), "First call to getResult()");
 
-        assertEquals(success, response.isSuccess(), "Second call to isSuccess()");
-        assertEquals(message, response.getMessage(), "Second call to getMessage()");
-        assertEquals(result, response.getResult(), "Second call to getResult()");
+        assertEquals(success, response.success(), "Second call to isSuccess()");
+        assertEquals(message, response.message(), "Second call to getMessage()");
+        assertEquals(result, response.result(), "Second call to getResult()");
     }
 
     @ParameterizedTest
     @MethodSource("provideSpecialCharacters")
     void testConstructor_SpecialCharactersInMessage(String message) {
-        // Arrange
+
         boolean success = true;
         String result = "$123.45";
 
-        // Act
+
         CurrencyConversionResponse response = new CurrencyConversionResponse(success, message, result);
 
-        // Assert
-        assertEquals(message, response.getMessage(), "Message should handle special characters");
+
+        assertEquals(message, response.message(), "Message should handle special characters");
     }
 
     @ParameterizedTest
     @MethodSource("provideSpecialCharactersForResult")
     void testConstructor_SpecialCharactersInResult(String result) {
-        // Arrange
+
         boolean success = true;
         String message = "Conversion successful";
 
-        // Act
+
         CurrencyConversionResponse response = new CurrencyConversionResponse(success, message, result);
 
-        // Assert
-        assertEquals(result, response.getResult(), "Result should handle special characters");
+
+        assertEquals(result, response.result(), "Result should handle special characters");
     }
 
     @ParameterizedTest
     @MethodSource("provideMultilineStrings")
     void testConstructor_MultilineMessage(String message) {
-        // Arrange
+
         boolean success = true;
         String result = "$123.45";
 
-        // Act
+
         CurrencyConversionResponse response = new CurrencyConversionResponse(success, message, result);
 
-        // Assert
-        assertEquals(message, response.getMessage(), "Message should handle multiline strings");
+        assertEquals(message, response.message(), "Message should handle multiline strings");
     }
 
     @Test
@@ -215,21 +212,20 @@ public class CurrencyConversionResponseTest {
         // This test assumes you might add hashCode/equals in the future
         // It's included as a suggestion for future development
 
-        // Arrange
+
         boolean success = true;
         String message = "Conversion successful";
         String result = "$123.45";
 
-        // Act
+
         CurrencyConversionResponse response = new CurrencyConversionResponse(success, message, result);
         int hashCode1 = response.hashCode();
         int hashCode2 = response.hashCode();
 
-        // Assert
+
         assertEquals(hashCode1, hashCode2, "HashCode should be consistent across multiple calls");
     }
 
-    // Method sources for parameterized tests
 
     private static Stream<Arguments> provideSpecialCharacters() {
         return Stream.of(

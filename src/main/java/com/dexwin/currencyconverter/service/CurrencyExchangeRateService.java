@@ -20,7 +20,7 @@ public class CurrencyExchangeRateService implements CurrencyService {
 
     private final RestClient restClient;
     private final String apiKey;
-    private final DecimalFormat decimalFormat = new DecimalFormat("#,##0.00"); // Format to 2 decimal places
+    private final DecimalFormat decimalFormat = new DecimalFormat("#,##0.00");
 
     public CurrencyExchangeRateService(RestClient.Builder restClientBuilder,
                                        @Value("${api.exchangerate.host.url}") String baseUrl,
