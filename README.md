@@ -22,8 +22,7 @@ Tasks:
  * Please introduce any change to any existing class if you think it improves the solution
 
 
-Good luck!
-
+Good 
 # Currency Conversion Application
 
 A RESTful API for real-time currency conversion using Spring Boot 3.2.
@@ -177,4 +176,5 @@ The system follows a layered architecture:
 ## Conclusion
 
 This application provides an efficient and scalable solution for currency conversion using Spring Boot, external APIs, and best practices in REST API design, error handling, and testing.
+
 
