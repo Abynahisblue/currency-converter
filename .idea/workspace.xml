@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a4b4729a-f063-474a-9231-4a77b52a3639" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/controller/CurrencyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/controller/CurrencyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/dto/CurrencyConversionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/dto/CurrencyConversionResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/service/CurrencyExchangeRateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/service/CurrencyExchangeRateService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/service/CurrencyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dexwin/currencyconverter/service/CurrencyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/dexwin/currencyconverter/service/CurrencyExchangeRateServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/dexwin/currencyconverter/service/CurrencyExchangeRateServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dexwin/currencyconverter/service/CurrencyExchangeRateService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dexwin/currencyconverter/service/CurrencyExchangeRateService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +206,7 @@
       <workItem from="1740770125677" duration="15002000" />
       <workItem from="1740850514074" duration="12517000" />
       <workItem from="1740877397713" duration="1040000" />
-      <workItem from="1740928606034" duration="3746000" />
+      <workItem from="1740928606034" duration="7758000" />
     </task>
     <servers />
   </component>
