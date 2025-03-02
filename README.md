@@ -89,11 +89,7 @@ Method
 
 Description
 
-/convert
-
-GET
-
-Converts an amount from one currency to another
+GET/convert: converts an amount from onecurrency to another
 
 Example Request
 
@@ -103,8 +99,12 @@ Example Response
 
 {
     "success": true,
-    "message": "Conversion successful",
-    "result": "¥105,437.53"
+    "query": {
+        "from": "USD",
+        "to": "JPY",
+        "amount": 700.0
+    },
+    "result": "¥105,437.48"
 }
 
 Error Handling
