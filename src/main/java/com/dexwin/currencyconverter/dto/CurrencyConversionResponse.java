@@ -1,7 +1,9 @@
 package com.dexwin.currencyconverter.dto;
 
-/**
- * @param result This now includes the symbol
- */
-public record CurrencyConversionResponse(boolean success, String message, String result) {
+public record CurrencyConversionResponse(
+        boolean success,
+        Query query,
+        String result
+) {
+    public record Query(String from, String to, double amount) {}
 }

@@ -66,7 +66,7 @@ public class CurrencyExchangeRateServiceTest {
 
         // Assert
         assertTrue(response.success());
-        assertEquals("Conversion successful", response.message());
+        assertEquals("Conversion successful", response.query());
         assertEquals("€85.23", response.result());
 
         verify(requestHeadersUriSpec).uri(expectedUrl);
@@ -164,7 +164,6 @@ public class CurrencyExchangeRateServiceTest {
 
         // Assert
         assertFalse(response.success());
-        assertEquals("Conversion failed", response.message());
         assertEquals("0.00", response.result());
     }
 
@@ -184,7 +183,6 @@ public class CurrencyExchangeRateServiceTest {
 
         // Assert
         assertFalse(response.success());
-        assertEquals("Conversion failed", response.message());
         assertEquals("0.00", response.result());
     }
 
@@ -204,7 +202,6 @@ public class CurrencyExchangeRateServiceTest {
 
         // Assert
         assertFalse(response.success());
-        assertEquals("Error fetching exchange rate: " + errorMessage, response.message());
         assertEquals("0.00", response.result());
     }
 
@@ -224,7 +221,6 @@ public class CurrencyExchangeRateServiceTest {
 
         // Assert
         assertFalse(response.success());
-        assertTrue(response.message().contains(errorMessage));
         assertEquals("0.00", response.result());
     }
 
