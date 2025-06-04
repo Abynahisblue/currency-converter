@@ -28,19 +28,6 @@ class CurrencyControllerTest {
         return Double.parseDouble(numericResult);
     }
 
-//    @Test
-//    public void should_convert_EUR_to_USD_with_rate_greater_than_1() throws Exception {
-//        String response = this.mockMvc.perform(get("/convert?source=EUR&target=USD&amount=1"))
-//                .andExpect(status().isOk())
-//                .andReturn()
-//                .getResponse()
-//                .getContentAsString();
-//
-//        double convertedValue = extractNumericResult(response);
-//        assertThat(convertedValue).isGreaterThan(1.0);
-//    }
-
-
     @Test
     public void should_convert_USD_to_EUR_with_rate_less_than_1() throws Exception {
         String response = this.mockMvc.perform(get("/convert?source=USD&target=EUR&amount=1"))
