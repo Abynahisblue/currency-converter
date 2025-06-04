@@ -32,6 +32,11 @@ public class CurrencyExchangeRateService implements CurrencyService {
     public CurrencyConversionResponse convert(String source, String target, double amount) {
         String url = "/convert?from=" + source + "&to=" + target + "&amount=" + amount + "&access_key=" + apiKey;
 
+        CurrencyConversionResponse currencyConversionResponse = new CurrencyConversionResponse(
+                false,
+                new CurrencyConversionResponse.Query(source, target, amount),
+                "0.00" // Return formatted default value
+        );
         try {
             ExchangeRateResponse response = restClient.get()
                     .uri(url)
@@ -48,18 +53,10 @@ public class CurrencyExchangeRateService implements CurrencyService {
                         formattedResult // Return formatted result instead of raw number
                 );
             } else {
-                return new CurrencyConversionResponse(
-                        false,
-                        new CurrencyConversionResponse.Query(source, target, amount),
-                        "0.00" // Return formatted default value
-                );
+                return currencyConversionResponse;
             }
         } catch (RestClientException e) {
-            return new CurrencyConversionResponse(
-                    false,
-                    new CurrencyConversionResponse.Query(source, target, amount),
-                    "0.00"
-            );
+            return currencyConversionResponse;
         }
     }
 }
