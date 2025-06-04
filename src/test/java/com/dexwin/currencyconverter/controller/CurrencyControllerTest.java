@@ -40,6 +40,7 @@ class CurrencyControllerTest {
 //        assertThat(convertedValue).isGreaterThan(1.0);
 //    }
 
+
     @Test
     public void should_convert_USD_to_EUR_with_rate_less_than_1() throws Exception {
         String response = this.mockMvc.perform(get("/convert?source=USD&target=EUR&amount=1"))
