@@ -6,4 +6,5 @@ public record CurrencyConversionResponse(
         String result
 ) {
     public record Query(String from, String to, double amount) {}
+
 }
