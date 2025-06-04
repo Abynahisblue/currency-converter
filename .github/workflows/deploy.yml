@@ -28,7 +28,6 @@ jobs:
 
       - name: Create deployment package
         run: |
-          mkdir deployment
           cp target/*.jar deployment/
           echo "web: java -Dserver.port=\$PORT -jar *.jar" > deployment/Procfile
           cd deployment
